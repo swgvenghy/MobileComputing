@@ -4,25 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:columnCount="5">
+    android:columnCount="3">
     <EditText
         android:id="@+id/num1"
         android:textSize="15sp"
         android:layout_gravity="fill_horizontal"
-        android:layout_columnSpan="5"
+        android:layout_columnSpan="3"
         android:hint="Num1"/>
     <EditText
         android:id="@+id/num2"
         android:textSize="15sp"
         android:layout_gravity="fill_horizontal"
-        android:layout_columnSpan="5"
+        android:layout_columnSpan="3"
         android:hint="Num2"/>
-    <Button
-        android:id="@+id/B0"
-        android:layout_width="0dp"
-        android:textSize="15sp"
-        android:layout_columnWeight="1"
-        android:text="0"/>
     <Button
         android:id="@+id/B1"
         android:layout_width="0dp"
@@ -78,36 +72,54 @@
         android:textSize="15sp"
         android:layout_columnWeight="1"
         android:text="9"/>
+    <Button
+        android:id="@+id/B0"
+        android:layout_width="0dp"
+        android:textSize="15sp"
+        android:layout_columnWeight="1"
+        android:text="0"/>
+    <Button
+        android:id="@+id/dot"
+        android:layout_width="0dp"
+        android:textSize="15sp"
+        android:layout_columnWeight="1"
+        android:text="."/>
 
     <Button
         android:id="@+id/add"
         android:textSize="15sp"
-        android:layout_columnSpan="5"
+        android:layout_columnSpan="3"
         android:layout_gravity="fill_horizontal"
         android:text="ADD"/>
     <Button
         android:id="@+id/sub"
         android:textSize="15sp"
-        android:layout_columnSpan="5"
+        android:layout_columnSpan="3"
         android:layout_gravity="fill_horizontal"
         android:text="SUB"/>
     <Button
         android:id="@+id/mul"
         android:textSize="15sp"
-        android:layout_columnSpan="5"
+        android:layout_columnSpan="3"
         android:layout_gravity="fill_horizontal"
         android:text="MUL"/>
     <Button
         android:id="@+id/div"
         android:textSize="15sp"
-        android:layout_columnSpan="5"
+        android:layout_columnSpan="3"
         android:layout_gravity="fill_horizontal"
         android:text="DIV"/>
+    <Button
+        android:id="@+id/clear"
+        android:textSize="15sp"
+        android:layout_columnSpan="3"
+        android:layout_gravity="fill_horizontal"
+        android:text="CLEAR"/>
     <TextView
         android:id="@+id/result"
-        android:layout_columnSpan="5"
+        android:layout_columnSpan="3"
         android:layout_gravity="fill_horizontal"
-        android:textSize="15sp"
+        android:textSize="25sp"
         android:text="@string/res"/>
 
 
