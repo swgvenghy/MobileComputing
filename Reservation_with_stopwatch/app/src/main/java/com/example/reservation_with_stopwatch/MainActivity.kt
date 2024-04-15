@@ -3,6 +3,7 @@ package com.example.reservation_with_stopwatch
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.example.reservation_with_stopwatch.databinding.ActivityMainBinding
 import java.text.SimpleDateFormat
@@ -24,12 +25,13 @@ class MainActivity : AppCompatActivity() {
         binding.btnStart.setOnClickListener{
             binding.chrono.base = SystemClock.elapsedRealtime()
             binding.chrono.start()
-
+            binding.chrono.setTextColor(ContextCompat.getColor(this, R.color.red))
 
         }
         binding.btnEnd.setOnClickListener {
             binding.chrono.stop()
             displayReservationInfo()
+            binding.chrono.setTextColor(ContextCompat.getColor(this, R.color.blue))
         }
         binding.rdoCal.setOnClickListener {
             binding.calenderView.isVisible=true
