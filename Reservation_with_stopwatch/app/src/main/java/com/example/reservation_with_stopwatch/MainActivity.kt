@@ -3,6 +3,7 @@ package com.example.reservation_with_stopwatch
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.example.reservation_with_stopwatch.databinding.ActivityMainBinding
@@ -21,18 +22,9 @@ class MainActivity : AppCompatActivity() {
         binding.calenderView.isVisible=false
         binding.timePicker.isVisible=false
 
+        binding.chrono.setOnClickListener { stopWatchStart() }
+        binding.res.setOnLongClickListener{ stopWatchStop() }
 
-        binding.btnStart.setOnClickListener{
-            binding.chrono.base = SystemClock.elapsedRealtime()
-            binding.chrono.start()
-            binding.chrono.setTextColor(ContextCompat.getColor(this, R.color.red))
-
-        }
-        binding.btnEnd.setOnClickListener {
-            binding.chrono.stop()
-            displayReservationInfo()
-            binding.chrono.setTextColor(ContextCompat.getColor(this, R.color.blue))
-        }
         binding.rdoCal.setOnClickListener {
             binding.calenderView.isVisible=true
             binding.timePicker.isVisible=false
@@ -64,4 +56,29 @@ class MainActivity : AppCompatActivity() {
         }
         binding.res.text = selectedDateTime
     }
+    private fun stopWatchStart() {
+        binding.chrono.base = SystemClock.elapsedRealtime()
+        binding.chrono.start()
+        binding.chrono.setTextColor(ContextCompat.getColor(this, R.color.red))
+        binding.rdoCal.isVisible = true
+        binding.rdoTime.isVisible = true
+    }
+
+    private fun stopWatchStop(): Boolean {
+        if(selectedDate != 0L && selectedTime.isNotEmpty()) {
+            binding.chrono.stop()
+            displayReservationInfo()
+            binding.chrono.setTextColor(ContextCompat.getColor(this, R.color.blue))
+            binding.rdoCal.isVisible=false
+            binding.rdoTime.isVisible=false
+            binding.calenderView.isVisible=false
+            binding.timePicker.isVisible=false
+            return true
+        }
+        else{
+            Toast.makeText(this, "날짜 및 시간을 선택해주세요", Toast.LENGTH_SHORT).show()
+            return false
+        }
+    }
+
 }

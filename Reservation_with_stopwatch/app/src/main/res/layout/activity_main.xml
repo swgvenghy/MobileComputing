@@ -13,22 +13,19 @@
             android:gravity="center"
             android:textSize="20sp"
             android:format="예약에 걸린 시간 %s"/>
-        <Button
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:id="@+id/btnStart"
-            android:textSize="20sp"
-            android:text="예약시작"/>
     </LinearLayout>
     <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content">
         <RadioButton
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:id="@+id/rdoCal"
             android:text="날짜 설정"
+            android:visibility="invisible"
             android:textSize="20sp"/>
         <RadioButton
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:id="@+id/rdoTime"
             android:textSize="20sp"
+            android:visibility="invisible"
             android:text="시간 설정"/>
     </RadioGroup>
     <LinearLayout
@@ -49,14 +46,10 @@
     <LinearLayout
         android:layout_width="match_parent" android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <Button
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:id="@+id/btnEnd"
-            android:textSize="20sp"
-            android:text="예약완료"/>
         <TextView
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:textSize="20sp"
+            android:text="@string/finishInfo"
             android:id="@+id/res"/>
     </LinearLayout>
 </LinearLayout>

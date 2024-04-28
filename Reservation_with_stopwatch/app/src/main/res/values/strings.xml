@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Reservation_with_stopwatch</string>
+    <string name="reservationStart">예약을 시작해주세요</string>
+    <string name="finishInfo">예약을 완료하려면 꾹 눌러주세요</string>
 </resources>
