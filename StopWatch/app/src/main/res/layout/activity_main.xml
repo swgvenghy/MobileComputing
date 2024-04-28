@@ -14,12 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/start"
-        android:id="@+id/start"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stop"
-        android:id="@+id/stop"/>
+        android:id="@+id/startStop"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

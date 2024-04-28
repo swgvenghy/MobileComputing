@@ -8,26 +8,33 @@ import com.example.stopwatch.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     var stopTime = 0L
+    var startBool = true
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        binding.start.setOnClickListener{onClickStart()}
-        binding.stop.setOnClickListener{onClickStop()}
+        binding.startStop.setOnClickListener { onClickStartStop() }
         binding.reset.setOnClickListener{onClickReset()}
     }
-
-     private fun onClickStart() {
-        binding.timer.base = SystemClock.elapsedRealtime() + stopTime
-        binding.timer.start()
-    }
-
-    private fun onClickStop() {
-        stopTime = binding.timer.base - SystemClock.elapsedRealtime()
-        binding.timer.stop()
+    private fun onClickStartStop() {
+        if(startBool) {
+            binding.timer.base = SystemClock.elapsedRealtime() + stopTime
+            binding.timer.start()
+            binding.startStop.setText(getString(R.string.stop))
+        }
+        else {
+            stopTime = binding.timer.base - SystemClock.elapsedRealtime()
+            binding.timer.stop()
+            binding.startStop.setText(getString(R.string.start))
+        }
+        startBool = !startBool
     }
     private fun onClickReset() {
+        if(startBool) {
+            binding.timer.stop()
+        }
         binding.timer.base = SystemClock.elapsedRealtime()
         stopTime = 0
     }
+
 }
