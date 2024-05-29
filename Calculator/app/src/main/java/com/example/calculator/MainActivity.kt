@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         val num1String = binding.num1.text.toString()
         val num2String = binding.num2.text.toString()
 
-        if (num1String.isEmpty() || num2String.isEmpty()) {
+        if (num1String.isEmpty() || num2String.isEmpty() || num1String.endsWith(".") || num2String.endsWith(".") ) {
             Toast.makeText(this, "숫자를 전부 입력하고 연산을 진행해주세요", Toast.LENGTH_SHORT).show()
             return
         }
