@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
             return true
         }
 
-        override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+            override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
             super.onSizeChanged(w, h, oldw, oldh)
             if (bitmap == null) {
                 bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity() {
 
         override fun onDraw(canvas: Canvas) {
             super.onDraw(canvas)
-            canvasBitmap?.drawColor(Color.WHITE) // Clear the canvas
+            canvasBitmap?.drawColor(Color.WHITE)
             drawingHistory.forEach { action ->
                 drawShape(canvasBitmap!!, action)
             }
