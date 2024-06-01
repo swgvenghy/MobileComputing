@@ -38,10 +38,8 @@ class BinaryTreeView @JvmOverloads constructor(
         val nodeRadius = 50f
 
         fun drawNode(value: Int, x: Float, y: Float) {
-            // Draw circle
             canvas.drawCircle(x, y, nodeRadius, nodePaint)
 
-            // Draw text in the center
             val textY = y - ((textPaint.descent() + textPaint.ascent()) / 2)
             canvas.drawText(value.toString(), x, textY, textPaint)
         }
